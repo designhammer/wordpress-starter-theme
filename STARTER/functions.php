@@ -93,6 +93,53 @@ function starter_admin_scripts() {
 add_action( 'admin_enqueue_scripts', 'starter_admin_scripts' );
 
 /**
+ * Changes markup for search form.
+ *
+ * @param resource $form Adjust search form markup for a better a11y UX.
+ */
+function starter_search_form( $form ) {
+	$form = '<form method="get" class="search-form" action="' . home_url( '/' ) . '" >
+		<div role="search"><label for="Search">' . __( 'Search for:' ) . '</label>
+			<input type="text" value="' . get_search_query() . '" name="s" id="Search" class="search-field">
+			<input type="submit" id="searchsubmit" value="' . esc_attr__( 'Submit' ) . '" class="search-submit">
+		</div>
+	</form>';
+
+	return $form;
+}
+add_filter( 'get_search_form', 'starter_search_form', 40 );
+
+/**
+ * Includes parent page title in HTML <title> if on a child page.
+ *
+ * @param array $title_parts_array Returns document title for the current page.
+ *
+ * @link https://developer.wordpress.org/reference/hooks/document_title_parts/
+ */
+function starter_custom_html_title( $title_parts_array ) {
+	if ( is_home() ) {
+		$title_parts_array['title'] = 'Blog';
+		if ( get_query_var( 'paged' ) === 0 ) {
+			$title_parts_array['title'] = 'Blog - Page 1';
+		}
+	} elseif ( wp_get_post_parent_id( get_the_ID() ) ) {
+		$title_parts_array['title'] = get_the_title() . ' - ' . get_the_title( wp_get_post_parent_id( get_the_ID() ) );
+	} else {
+		$title_parts_array['title'] = get_the_title();
+	}
+
+	$title_parts_array['site'] = get_bloginfo( 'name' );
+
+	return $title_parts_array;
+}
+add_filter( 'document_title_parts', 'starter_custom_html_title', 10 );
+
+/**
+ * Adds toggle button for drop-down menu.
+ */
+require get_template_directory() . '/inc/class-button-sublevel-walker.php';
+
+/**
  * Widget areas.
  */
 require get_template_directory() . '/inc/widgets.php';

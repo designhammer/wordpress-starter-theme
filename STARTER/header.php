@@ -34,9 +34,9 @@
 <?php wp_body_open(); ?>
 
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'starter' ); ?></a>
-
 	<header id="masthead" class="site-header">
+		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'starter' ); ?></a>
+
 		<div class="header-container">
 
 			<div class="site-branding">
@@ -44,7 +44,6 @@
 				the_custom_logo();
 				?>
 					<div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
-
 				<?php
 				$starter_description = get_bloginfo( 'description', 'display' );
 				if ( $starter_description || is_customize_preview() ) :
@@ -53,25 +52,24 @@
 				<?php endif; ?>
 			</div><!-- .site-branding -->
 
-			<nav id="site-navigation">
-				<div id="mobile-menu-icon" aria-hidden="true">
-					<i></i>
-					<i></i>
-					<i></i>
-					<i></i>
-				</div>
-				<button class="menu-button" aria-expanded="false"><span class="visually-hidden">Menu</span></button>
-
-				<div class="main-navigation">
-					<?php
-					wp_nav_menu(
-						array(
-							'theme_location' => 'menu-1',
-							'menu_id'        => 'primary-menu',
-						)
+			<button id="mobile-menu" class="menu-button button-outline" aria-expanded="false" aria-controls="site-nav"><?php echo esc_attr__( 'Menu' ); ?></button>
+			<nav id="site-navigation" aria-label="Primary">
+				<h2 id="primary-navigation-heading" class="visually-hidden">Primary navigation</h2>
+				<div id="site-nav" class="main-navigation">
+				<?php
+					$header_menu_primary = array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+						'echo'           => true,
+						'fallback_cb'    => 'wp_page_menu',
+						'items_wrap'     => '<ul aria-labelledby="primary-navigation-heading" id="%1$s" class="%2$s"> %3$s <li class="menu-item search"><button id="search-modal-button" class="button-outline" aria-expanded="false" aria-controls="search-modal">' . esc_attr__( 'Search' ) . '</button></li></ul>',
+						'depth'          => 0,
+						'walker'         => new Button_Sublevel_Walker(),
 					);
+					wp_nav_menu( $header_menu_primary );
 					?>
 				</div>
 			</nav><!-- #site-navigation -->
+
 		</div>
 	</header><!-- #masthead -->

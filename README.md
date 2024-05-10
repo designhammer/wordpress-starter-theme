@@ -17,4 +17,4 @@ _— [Bill Erickson](https://www.billerickson.net/)._
 ## Getting Started
 
 1. Search and replace every instenace of the following three word instances with the new theme name. "STARTER", "Starter", and "starter".
-2. Copy `resources/.editorconfig` and `resources/composer.json` files to the root of the new websites repo.
+2. Move `.editorconfig` and `composer.json` files to the root of the new websites repo. Composer will install the PHP Code Sniffer tools used for linting. It also installs [deployer](https://deployer.org/), but if you don't need it, remove it from the composer file before running `composer install`.
