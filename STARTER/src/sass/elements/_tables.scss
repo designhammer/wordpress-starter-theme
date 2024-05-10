@@ -1,0 +1,37 @@
+table {
+	border-style: none;
+	border-collapse: collapse;
+	margin: 2rem 0;
+	width: 100%;
+
+	th,
+	td {
+		border-style: none;
+		padding: 1rem;
+	}
+
+	th {
+		font-size: 17px;
+		text-align: left;
+		border-bottom: 2px solid $md-blue-500;
+		vertical-align: bottom;
+	}
+
+	td {
+		font-size: 17px;
+		border-bottom: 1px solid $md-gray-300;
+	}
+
+	tr:last-child td {
+		@media #{$breakpoint-md-up} {
+			border-bottom-style: none;
+		}
+	}
+
+	&.bt {
+
+		tr {
+			border-top: 2px solid $md-blue-500;
+		}
+	}
+}

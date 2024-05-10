@@ -1,0 +1,123 @@
+// stylelint-disable declaration-block-no-duplicate-properties
+// stylelint-disable value-no-vendor-prefix
+
+// ! grid
+@mixin row($justify-content: flex-start, $align-items: stretch) {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: $justify-content;
+	align-items: $align-items;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+@mixin row-unflexed {
+	flex: unset;
+	display: unset;
+	flex-wrap: unset;
+	margin: 0;
+	width: 100%;
+	max-width: unset;
+}
+
+@mixin col($size: $grid-12, $padding: 1rem) {
+	flex: 0 1 $size;
+	max-width: $size;
+
+	@if $padding !=0 {
+		padding: $padding;
+	}
+}
+
+@mixin element-invisible {
+	overflow: hidden;
+	position: absolute !important;
+	width: 0;
+	height: 0;
+}
+
+// Responsive video
+@mixin video-iframe-wrapper {
+	float: none;
+	clear: both;
+	position: relative;
+	margin: 0 auto;
+	padding-bottom: 56.25%;
+	width: 100%;
+	max-width: 100%;
+	height: 0;
+
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+@mixin video-wrapper {
+	position: relative;
+	margin: 0 auto;
+	padding-bottom: 56.25%;
+	width: 100%;
+	max-width: 100%;
+	height: 0;
+
+	video {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+// Word wrap
+@mixin word-wrap {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-ms-word-break: break-all;
+	word-break: break-all;
+	word-break: break-word;
+	-ms-hyphens: auto;
+	-moz-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+}
+
+// Ellipsis
+@mixin ellipsis {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+// vertical/horizontal gradient
+@mixin gradient($start-color, $end-color, $orientation) {
+	background: $start-color;
+
+	@if $orientation =="vertical" {
+		background: -webkit-linear-gradient(top, $start-color, $end-color);
+		background: linear-gradient(to bottom, $start-color, $end-color);
+	}
+
+	@else if $orientation =="horizontal" {
+		background: -webkit-linear-gradient(left, $start-color, $end-color);
+		background: linear-gradient(to right, $start-color, $end-color);
+	}
+
+	@else {
+		background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+		background: radial-gradient(ellipse at center, $start-color, $end-color);
+	}
+}
+
+// diagonal gradient
+// @include gradient-diagonal(0deg, #top_color, 0%, #bottom_color, 100%);
+@mixin gradient-diagonal($deg, $from, $fromstop, $to, $tostop) {
+	background: $from;
+	background: -webkit-linear-gradient($deg, $from $fromstop, $to $tostop);
+	background: linear-gradient($deg, $from $fromstop, $to $tostop);
+}
