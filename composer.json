@@ -1,6 +1,6 @@
 {
   "name": "dh/starter-wordpress",
-  "description": "WordPress site for Starter",
+  "description": "Starter theme for WordPress",
   "config": {
     "platform-check": false,
     "allow-plugins": {

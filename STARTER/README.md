@@ -3,32 +3,24 @@
 Replace every instenace of the following three word instances with the new theme name. "STARTER", "Starter", and "starter".
 
 
-## Install
+## Linting
+
+### Install
 
 Install the following node modules (npm), in the same directory as this readme file, for compiling and linting the code.
 
+We use **bun.sh** for JavaScript runtime. See how to [install bun](https://bun.sh/docs/installation).
+
 ```bash
-npm i -D autoprefixer browser-sync concurrently nodemon postcss postcss-cli postcss-pxtorem sass standard stylelint stylelint-config-sass-guidelines stylelint-order uglify-js
+bun add -D standard stylelint stylelint-config-sass-guidelines stylelint-order
 ```
-
-## Config
-
-**bsync.config file:**
-
-- Duplicate `build.config.sample.js` file and rename it `build.config.js`.
-- Change values in file as needed.
-- ⚠️ Do not commit this file to the repo. It's for your local dev env only.
-
-
-## Linting
 
 We'll also be linting our sass and Javascript in order to produce well written and consistent code.
 
-Required lint files (should be added during initial theme setup):
+Required lint files (should be included in this repo):
 
 - .eslintrc.json
 - .stylelint.json
-- .stylelintignore
 
 To do a global lint on the SCSS files run: `npx stylelint "scss/**/*.scss"`. To fix found errors add the `--fix` flag.
 
