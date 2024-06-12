@@ -52,7 +52,7 @@
 				<?php endif; ?>
 			</div><!-- .site-branding -->
 
-			<button id="mobile-menu" class="menu-button button-outline" aria-expanded="false" aria-controls="site-nav"><?php echo esc_attr__( 'Menu' ); ?></button>
+			<button id="mobile-menu" class="menu-button" aria-expanded="false" aria-controls="site-nav"><?php echo esc_attr__( 'Menu' ); ?></button>
 			<nav id="site-navigation" aria-label="Primary">
 				<h2 id="primary-navigation-heading" class="visually-hidden">Primary navigation</h2>
 				<div id="site-nav" class="main-navigation">

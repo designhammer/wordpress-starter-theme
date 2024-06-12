@@ -733,7 +733,7 @@ table.bt tr {
     height: 6.5rem;
   }
 }
-.site-header #site-navigation .menu-button {
+.site-header .menu-button {
   color: #222222;
   border-style: none;
   background-color: transparent;
@@ -747,7 +747,7 @@ table.bt tr {
   cursor: pointer;
 }
 @media (min-width: 62.0625rem) {
-  .site-header #site-navigation .menu-button {
+  .site-header .menu-button {
     display: none;
   }
 }
