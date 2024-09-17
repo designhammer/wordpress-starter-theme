@@ -11,7 +11,7 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
+	<footer class="site-footer">
 		<h2 class="visually-hidden">Footer</h2>
 		<div class="site-info">
 
@@ -34,7 +34,7 @@
 			</nav>
 
 		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	</footer>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

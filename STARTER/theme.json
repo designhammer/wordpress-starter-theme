@@ -213,6 +213,6 @@
       "lineHeight": "1.2"
     }
   },
-  "version": 2,
+  "version": 3,
   "$schema": "https://schemas.wp.org/trunk/theme.json"
 }
