@@ -18,3 +18,7 @@ _— [Bill Erickson](https://www.billerickson.net/)._
 1. Search and replace every instenace of the following three word instances with the new theme name. "STARTER", "Starter", and "starter".
 2. Move `.editorconfig` and `composer.json` files to the root of the new websites repo. Composer will install the [PHP CodeSniffer](https://github.com/PHPCSStandards/PHP_CodeSniffer/) tools used for PHP linting. It also installs [deployer](https://deployer.org/), but if you don't need it, remove it from the composer file before running `composer install`.
 3. Use our [Theme Task Runner](https://github.com/designhammer/theme-task-runner) setup for compiling Sass, JavaScript and Linting our code.
+
+## Theme error
+
+Be sure to add the "Primary Menu" and "Footer Menu" under Appearence > Menus. This will fix the error from file `STARTER/inc/class-button-sublevel-walker.php`.

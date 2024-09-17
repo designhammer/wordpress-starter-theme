@@ -41,7 +41,8 @@ function starter_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'starter' ),
+			'menu-1' => esc_html__( 'Primary Menu', 'starter' ),
+			'menu-2' => esc_html__( 'Footer Menu', 'starter' ),
 		)
 	);
 
@@ -66,6 +67,19 @@ function starter_setup() {
 	add_theme_support( 'customize-selective-refresh-widgets' );
 }
 add_action( 'after_setup_theme', 'starter_setup' );
+
+/**
+ * Custom image sizes.
+ *
+ * @link https://developer.wordpress.org/reference/functions/add_image_size/
+ * @link https://developer.wordpress.org/reference/functions/wp_get_attachment_image_src/
+ */
+function starter_image_size() {
+
+	add_image_size( 'fullwidth', 1200 ); // 1200 pixels wide with unlimited height.
+	add_image_size( 'team', 370, 370, true ); // true = cropped.
+}
+add_action( 'after_setup_theme', 'starter_image_size' );
 
 /**
  * Enqueue scripts and styles.
