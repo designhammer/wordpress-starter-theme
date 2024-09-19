@@ -52,7 +52,15 @@
 				<?php endif; ?>
 			</div><!-- .site-branding -->
 
-			<button id="mobile-menu" class="menu-button" aria-expanded="false" aria-controls="site-nav"><?php echo esc_attr__( 'Menu' ); ?></button>
+			<button id="mobile-menu" class="menu-button" aria-expanded="false" aria-controls="site-nav">
+				<?php echo esc_attr__( 'Menu' ); ?>
+				<div id="mobile-menu-icon" aria-hidden="true">
+					<i></i>
+					<i></i>
+					<i></i>
+					<i></i>
+				</div>
+			</button>
 			<nav id="site-navigation" aria-label="Primary">
 				<h2 id="primary-navigation-heading" class="visually-hidden">Primary navigation</h2>
 				<div id="site-nav" class="main-navigation">
@@ -68,7 +76,12 @@
 					);
 					wp_nav_menu( $header_menu_primary );
 					?>
+
+					<div id="search-modal">
+						<?php get_search_form(); ?>
+					</div>
 				</div>
+
 			</nav><!-- #site-navigation -->
 
 		</div>

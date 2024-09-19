@@ -100,5 +100,40 @@ function ready () {
 		}
     })
 	// end menu
+
+	// ! Search modal
+	// Click to open search modal.
+	const menuItemSearch = document.querySelectorAll('.site-header #primary-menu .menu-item.search button')
+	const searchModal = document.getElementById('search-modal')
+	for ( let menuSearch of menuItemSearch ) {
+
+		// ! Search - toggle modal drop-down.
+		menuSearch.addEventListener( 'click', function (e) {
+			e.preventDefault()
+
+			if ( menuSearch.classList.contains( 'search-open' ) ) {
+				// If search modal is open, close it.
+				searchModal.classList.remove( 'search-open' )
+				menuSearch.classList.remove( 'search-open' )
+				menuSearch.setAttribute( 'aria-expanded', false )
+			} else {
+				// If search modal is closed, open it.
+				searchModal.classList.add( 'search-open' )
+				menuSearch.classList.add( 'search-open' )
+				menuSearch.setAttribute( 'aria-expanded', true )
+			}
+		})
+
+		// ! Search - hide search modal using ESC key.
+		document.addEventListener('keyup', function (e) {
+			const key = e.key
+			if (key === 'Escape' && menuSearch.getAttribute('aria-expanded') === 'true') {
+				menuSearch.setAttribute('aria-expanded', false)
+				menuSearch.classList.remove( 'search-open' )
+				menuSearch.focus()
+				searchModal.classList.remove( 'search-open' )
+			}
+		})
+	}
 }
 document.addEventListener( 'DOMContentLoaded', ready )
