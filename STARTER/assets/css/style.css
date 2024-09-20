@@ -282,6 +282,58 @@ a:focus-visible {
   background: url("../assets/images/chevron-left.svg") no-repeat left center;
 }
 
+.pagination {
+  margin: auto;
+  padding: 0 1rem 3.125rem;
+  width: 100%;
+  max-width: 75rem;
+}
+.pagination ul {
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+.pagination ul li {
+  padding: 0.5rem;
+}
+.pagination ul li a {
+  color: #2196f3;
+  text-decoration: none;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 1px #2196f3;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  transition: background 0.5s ease;
+}
+.pagination ul li a:hover {
+  background-color: rgba(33, 150, 243, 0.075);
+  transition: background 0.2s ease;
+}
+.pagination ul li.active a {
+  color: #ffffff;
+  background-color: #2196f3;
+}
+.pagination ul li.previous, .pagination ul li.next {
+  flex: 0 1 100%;
+  text-align: center;
+}
+@media (min-width: 48.0625rem) {
+  .pagination ul li.previous, .pagination ul li.next {
+    flex: 0 1 auto;
+  }
+}
+.pagination ul li.previous a, .pagination ul li.next a {
+  box-shadow: unset;
+  padding: 0.5rem 0.75rem;
+}
+.pagination ul li.ellipsis {
+  padding: 0.5rem 1rem;
+}
+
 button,
 input,
 select,
@@ -289,8 +341,88 @@ optgroup,
 textarea {
   color: #222222;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.2;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+input[type=color],
+input[type=date],
+input[type=datetime-local],
+input[type=datetime],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=range],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week] {
+  color: #1976d2;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 2px solid #1976d2;
+  background-color: #ffffff;
+  display: inline-block;
+  padding: 0.5rem;
+  width: 100%;
+  height: 3.125rem !important;
+}
+input[type=color]:focus,
+input[type=date]:focus,
+input[type=datetime-local]:focus,
+input[type=datetime]:focus,
+input[type=email]:focus,
+input[type=month]:focus,
+input[type=number]:focus,
+input[type=password]:focus,
+input[type=range]:focus,
+input[type=search]:focus,
+input[type=tel]:focus,
+input[type=text]:focus,
+input[type=time]:focus,
+input[type=url]:focus,
+input[type=week]:focus {
+  outline: 2px solid #222222;
+  outline-offset: 2px;
+}
+input[type=color]:focus:not(:focus-visible),
+input[type=date]:focus:not(:focus-visible),
+input[type=datetime-local]:focus:not(:focus-visible),
+input[type=datetime]:focus:not(:focus-visible),
+input[type=email]:focus:not(:focus-visible),
+input[type=month]:focus:not(:focus-visible),
+input[type=number]:focus:not(:focus-visible),
+input[type=password]:focus:not(:focus-visible),
+input[type=range]:focus:not(:focus-visible),
+input[type=search]:focus:not(:focus-visible),
+input[type=tel]:focus:not(:focus-visible),
+input[type=text]:focus:not(:focus-visible),
+input[type=time]:focus:not(:focus-visible),
+input[type=url]:focus:not(:focus-visible),
+input[type=week]:focus:not(:focus-visible) {
+  outline: unset;
+}
+input[type=color]:focus-visible,
+input[type=date]:focus-visible,
+input[type=datetime-local]:focus-visible,
+input[type=datetime]:focus-visible,
+input[type=email]:focus-visible,
+input[type=month]:focus-visible,
+input[type=number]:focus-visible,
+input[type=password]:focus-visible,
+input[type=range]:focus-visible,
+input[type=search]:focus-visible,
+input[type=tel]:focus-visible,
+input[type=text]:focus-visible,
+input[type=time]:focus-visible,
+input[type=url]:focus-visible,
+input[type=week]:focus-visible {
+  outline: 2px solid #222222;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #ffffff;
 }
 
 button,
@@ -303,96 +435,48 @@ input[type=submit] {
   font-weight: 700;
   text-align: center;
   text-decoration: none;
-  border: 2px solid #2196f3;
-  border-radius: 50px;
-  background-color: #2196f3;
+  border: 2px solid #1976d2;
+  background-color: #1976d2;
   display: inline-block;
-  padding: 0.3rem 1.5rem;
-  transition: color 0.4s ease, background-color 0.4s ease;
+  padding: 0.5rem 1.5rem;
+  transition: background-color 0.4s ease;
+  cursor: pointer;
 }
-
-button:focus,
-button:active,
-input[type=button]:focus,
-input[type=button]:active,
-input[type=reset]:focus,
-input[type=reset]:active,
-input[type=submit]:focus,
-input[type=submit]:active {
-  outline: 2px solid #222222;
-}
-
 button:hover,
 input[type=button]:hover,
 input[type=reset]:hover,
 input[type=submit]:hover {
-  color: #2196f3;
-  background-color: #ffffff;
-  transition: color 0.2s ease, background-color 0.2s ease;
+  color: #ffffff;
+  border-color: #0d47a1;
+  background-color: #0d47a1;
+  transition: background-color 0.2s ease;
 }
-
 button:focus,
 input[type=button]:focus,
 input[type=reset]:focus,
 input[type=submit]:focus {
   outline: 2px solid #222222;
+  outline-offset: 2px;
 }
-
-input[type=text],
-input[type=email],
-input[type=url],
-input[type=password],
-input[type=search],
-input[type=number],
-input[type=tel],
-input[type=range],
-input[type=date],
-input[type=month],
-input[type=week],
-input[type=time],
-input[type=text],
-input[type=datetime],
-input[type=datetime-local],
-input[type=color],
-textarea {
-  color: #222222;
-  border: 2px solid #bdbdbd;
-  border-radius: 4px;
-  padding: 0 2%;
-  width: 100%;
-  height: 3.125rem !important;
+button:focus:not(:focus-visible),
+input[type=button]:focus:not(:focus-visible),
+input[type=reset]:focus:not(:focus-visible),
+input[type=submit]:focus:not(:focus-visible) {
+  outline: unset;
 }
-
-input[type=text]:focus,
-input[type=email]:focus,
-input[type=url]:focus,
-input[type=password]:focus,
-input[type=search]:focus,
-input[type=number]:focus,
-input[type=tel]:focus,
-input[type=range]:focus,
-input[type=date]:focus,
-input[type=month]:focus,
-input[type=week]:focus,
-input[type=time]:focus,
-input[type=text]:focus,
-input[type=datetime]:focus,
-input[type=datetime-local]:focus,
-input[type=color]:focus,
-textarea:focus {
-  color: #ff9800;
+button:focus-visible,
+input[type=button]:focus-visible,
+input[type=reset]:focus-visible,
+input[type=submit]:focus-visible {
   outline: 2px solid #222222;
-}
-
-button {
-  cursor: pointer;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #ffffff;
 }
 
 /* ! textarea */
 textarea {
   color: #222222;
   border: 3px solid #bdbdbd;
-  border-radius: 4px;
   padding: 2%;
   width: 100%;
   height: auto !important;
@@ -404,66 +488,31 @@ select {
   color: #222222;
   font-size: 1rem;
   line-height: 1.5;
-  border: 2px solid #bdbdbd;
-  border-radius: 4px;
+  border: 2px solid #1976d2;
+  background-color: #ffffff;
   padding: 0 2%;
   width: 100%;
   height: 3.125rem;
 }
+select:hover {
+  color: #1976d2;
+  transition: color 0.2s ease;
+}
 select:focus {
-  border-color: #ffffff;
   outline: 2px solid #222222;
+  outline-offset: 2px;
+}
+select:focus:not(:focus-visible) {
+  outline: unset;
+}
+select:focus-visible {
+  outline: 2px solid #222222;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #ffffff;
 }
 select[disabled=disabled] {
   opacity: 0.5;
   cursor: not-allowed;
-}
-
-/* ! search form */
-.search-form label {
-  font-size: 0.9375rem;
-  font-weight: 700;
-}
-.search-form .search-field {
-  border: 1px solid #757575;
-  border-radius: 5px;
-  background-color: #f5f5f5;
-  padding: 0.25rem;
-  width: 100%;
-  height: auto !important;
-}
-.search-form .search-field:focus {
-  color: #222222;
-  background-color: #ffffff;
-}
-.search-form .search-submit {
-  color: #ffffff;
-  font-weight: 700;
-  border-color: #2196f3;
-  border-radius: 50px;
-  background-color: #2196f3;
-  display: block;
-  margin-top: 0.75rem;
-  margin-left: auto;
-  padding: 0.3rem 1.25rem;
-  cursor: pointer;
-  transition: border 0.3s ease, background 0.3s ease;
-}
-.search-form .search-submit:focus {
-  outline-offset: 2px;
-}
-.search-form .search-submit:focus:not(:focus-visible) {
-  outline: unset;
-}
-.search-form .search-submit:focus-visible {
-  outline: 2px solid #222222;
-  outline-offset: 2px;
-}
-.search-form .search-submit:hover {
-  color: #2196f3;
-  background-color: #ffffff;
-  background-position: 0.75rem -2.125rem;
-  transition: border 0.15s ease, background 0.15s ease;
 }
 
 table {
@@ -1035,6 +1084,25 @@ hr,
   padding-top: 1rem;
 }
 
+.search-results .search-form {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 1.5rem;
+}
+.search-results .search-form label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: block;
+}
+.search-results .search-form .search-field {
+  background-color: #f5f5f5;
+  display: block;
+  width: 100%;
+  max-width: 25rem;
+}
+.search-results .search-form .search-submit {
+  margin-top: 1rem;
+  height: 3.125rem;
+}
 .search-results .search-results-wrap article {
   border-top: 1px solid #eeeeee;
   clear: both;
@@ -1086,58 +1154,6 @@ hr,
   left: 0;
   width: 100%;
   height: 100%;
-}
-
-.pagination {
-  margin: auto;
-  padding: 0 1rem 3.125rem;
-  width: 100%;
-  max-width: 75rem;
-}
-.pagination ul {
-  font-size: 0.875rem;
-  font-weight: 500;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-}
-.pagination ul li {
-  padding: 0.5rem;
-}
-.pagination ul li a {
-  color: #2196f3;
-  text-decoration: none;
-  border-radius: 4px;
-  box-shadow: inset 0 0 0 1px #2196f3;
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  transition: background 0.5s ease;
-}
-.pagination ul li a:hover {
-  background-color: rgba(33, 150, 243, 0.075);
-  transition: background 0.2s ease;
-}
-.pagination ul li.active a {
-  color: #ffffff;
-  background-color: #2196f3;
-}
-.pagination ul li.previous, .pagination ul li.next {
-  flex: 0 1 100%;
-  text-align: center;
-}
-@media (min-width: 48.0625rem) {
-  .pagination ul li.previous, .pagination ul li.next {
-    flex: 0 1 auto;
-  }
-}
-.pagination ul li.previous a, .pagination ul li.next a {
-  box-shadow: unset;
-  padding: 0.5rem 0.75rem;
-}
-.pagination ul li.ellipsis {
-  padding: 0.5rem 1rem;
 }
 
 #__bs_notify__ {

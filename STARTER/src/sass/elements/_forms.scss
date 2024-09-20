@@ -5,10 +5,54 @@ optgroup,
 textarea {
 	color: $text-color;
 	font-size: 1rem;
-	line-height: 1.5;
+	line-height: 1.2;
 	font-family: $font-main;
 }
 
+// MARK: input
+input[type="color"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="datetime"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="range"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"] {
+	color: $md-blue-700;
+	font-size: 1rem;
+	font-weight: 500;
+	border: 2px solid $md-blue-700;
+	background-color: $white;
+	display: inline-block;
+	padding: 8px;
+	width: 100%;
+	height: 50px !important;
+
+	// &:active,
+	&:focus {
+		outline: 2px solid $black;
+		outline-offset: 2px;
+	}
+
+	&:focus:not(:focus-visible) {
+		outline: unset;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $black;
+		outline-offset: 2px;
+		box-shadow: 0 0 0 2px $white;
+	}
+}
+
+// MARK: button
 button,
 input[type="button"],
 input[type="reset"],
@@ -19,96 +63,41 @@ input[type="submit"] {
 	font-weight: 700;
 	text-align: center;
 	text-decoration: none;
-	border: 2px solid $md-blue-500;
-	border-radius: 50px;
-	background-color: $md-blue-500;
+	border: 2px solid $md-blue-700;
+	background-color: $md-blue-700;
 	display: inline-block;
-	padding: 0.3rem 1.5rem;
-	transition: color 0.4s ease, background-color 0.4s ease;
-}
-
-button:focus,
-button:active,
-input[type="button"]:focus,
-input[type="button"]:active,
-input[type="reset"]:focus,
-input[type="reset"]:active,
-input[type="submit"]:focus,
-input[type="submit"]:active {
-	outline: 2px solid $black;
-}
-
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-	color: $md-blue-500;
-	background-color: $white;
-	transition: color 0.2s ease, background-color 0.2s ease;
-}
-
-button:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus {
-	outline: 2px solid $black;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="text"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
-textarea {
-	color: $text-color;
-	border: 2px solid $md-gray-400;
-	border-radius: 4px;
-	padding: 0 2%;
-	width: 100%;
-	height: 50px !important;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="number"]:focus,
-input[type="tel"]:focus,
-input[type="range"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="week"]:focus,
-input[type="time"]:focus,
-input[type="text"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="color"]:focus,
-textarea:focus {
-	color: $md-orange-500;
-	outline: 2px solid $black;
-}
-
-button {
+	padding: 8px 24px;
+	transition: background-color 0.4s ease;
 	cursor: pointer;
+
+	&:hover {
+		color: $white;
+		border-color: $md-blue-900;
+		background-color: $md-blue-900;
+		transition: background-color 0.2s ease;
+	}
+
+	// &:active,
+	&:focus {
+		outline: 2px solid $black;
+		outline-offset: 2px;
+	}
+
+	&:focus:not(:focus-visible) {
+		outline: unset;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $black;
+		outline-offset: 2px;
+		box-shadow: 0 0 0 2px $white;
+	}
 }
 
 /* ! textarea */
 textarea {
 	color: $text-color;
 	border: 3px solid $md-gray-400;
-	border-radius: 4px;
 	padding: 2%;
 	width: 100%;
 	height: auto !important;
@@ -120,76 +109,35 @@ select {
 	color: $text-color;
 	font-size: 1rem;
 	line-height: 1.5;
-	border: 2px solid $md-gray-400;
-	border-radius: 4px;
+	border: 2px solid $md-blue-700;
+	background-color: $white;
 	padding: 0 2%;
 	width: 100%;
 	height: 50px;
 
-	&:focus {
-		border-color: $white;
-		outline: 2px solid $black;
+	&:hover {
+		color: $md-blue-700;
+		transition: color 0.2s ease;
 	}
 
-	&[disabled=disabled] {
+	// &:active,
+	&:focus {
+		outline: 2px solid $black;
+		outline-offset: 2px;
+	}
+
+	&:focus:not(:focus-visible) {
+		outline: unset;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $black;
+		outline-offset: 2px;
+		box-shadow: 0 0 0 2px $white;
+	}
+
+	&[disabled="disabled"] {
 		opacity: 0.5;
 		cursor: not-allowed;
-	}
-}
-
-/* ! search form */
-.search-form {
-
-	label {
-		font-size: 15px;
-		font-weight: 700;
-	}
-
-	.search-field {
-		border: 1px solid $md-gray-600;
-		border-radius: 5px;
-		background-color: $md-gray-100;
-		padding: 0.25rem;
-		width: 100%;
-		height: auto !important;
-
-		&:focus {
-			color: $text-color;
-			background-color: $white;
-		}
-	}
-
-	.search-submit {
-		color: $white;
-		font-weight: 700;
-		border-color: $md-blue-500;
-		border-radius: 50px;
-		background-color: $md-blue-500;
-		display: block;
-		margin-top: 0.75rem;
-		margin-left: auto;
-		padding: 0.3rem 1.25rem;
-		cursor: pointer;
-		transition: border 0.3s ease, background 0.3s ease;
-
-		&:focus {
-			outline-offset: 2px;
-		}
-
-		&:focus:not(:focus-visible) {
-			outline: unset;
-		}
-
-		&:focus-visible {
-			outline: 2px solid $black;
-			outline-offset: 2px;
-		}
-
-		&:hover {
-			color: $md-blue-500;
-			background-color: $white;
-			background-position: 12px -34px;
-			transition: border 0.15s ease, background 0.15s ease;
-		}
 	}
 }
