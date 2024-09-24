@@ -262,7 +262,7 @@ a:focus-visible {
 .comment-navigation .nav-links .nav-previous a .nav-title,
 .post-navigation .nav-links .nav-previous a .nav-title,
 .posts-navigation .nav-links .nav-previous a .nav-title {
-  background: url("../assets/images/chevron-right.svg") no-repeat right center;
+  background: url("../images/chevron-right.svg") no-repeat right center;
 }
 .comment-navigation .nav-links .nav-next,
 .post-navigation .nav-links .nav-next,
@@ -279,7 +279,7 @@ a:focus-visible {
 .comment-navigation .nav-links .nav-next a .nav-title,
 .post-navigation .nav-links .nav-next a .nav-title,
 .posts-navigation .nav-links .nav-next a .nav-title {
-  background: url("../assets/images/chevron-left.svg") no-repeat left center;
+  background: url("../images/chevron-left.svg") no-repeat left center;
 }
 
 .pagination {
