@@ -49,7 +49,13 @@ if ( ! class_exists( 'Button_Sublevel_Walker' ) ) {
 			$id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $data_object->ID, $data_object, $args );
 			$id = strlen( $id ) ? ' id="' . esc_attr( $id ) . '"' : '';
 
-			$output .= $indent . '<li' . $id . $value . $class_names . '>';
+			// Check if the current menu item is the current page.
+			$current_page = '';
+			if ( in_array( 'current-menu-item', $classes, true ) ) {
+				$current_page = ' aria-current="page"';
+			}
+
+			$output .= $indent . '<li' . $id . $value . $class_names . $current_page . '>';
 
 			$attributes  = ! empty( $data_object->attr_title ) ? ' title="' . esc_attr( $data_object->attr_title ) . '"' : '';
 			$attributes .= ! empty( $data_object->target ) ? ' target="' . esc_attr( $data_object->target ) . '"' : '';
@@ -61,7 +67,7 @@ if ( ! class_exists( 'Button_Sublevel_Walker' ) ) {
 			// If $has_children, change parent anchor to a button.
 			if ( in_array( 'menu-item-has-children', $classes, true ) && 0 === $depth ) {
 				$data_object_output .= '<button aria-expanded="false" class="toggle-dropdown"><span>';
-				$data_object_output .= apply_filters( 'the_title', $data_object->title );
+				$data_object_output .= apply_filters( 'the_title', $data_object->title, $data_object->ID );
 				$data_object_output .= '</span></button>';
 			} else {
 				$data_object_output .= '<a' . $attributes . '>';
