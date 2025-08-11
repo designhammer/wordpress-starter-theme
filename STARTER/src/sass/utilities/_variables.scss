@@ -13,9 +13,11 @@ $grid-11: math.div(11, 12) * 100%; // 91.6666666667%
 $grid-12: 100%;
 
 // ! breakpoints
-$breakpoint-xs-only: "(max-width: 480px)";
-$breakpoint-sm-up: "(min-width: 481px)";
-$breakpoint-sm-only: "(min-width: 481px) and (max-width: 768px)";
+$breakpoint-xs-down: "(max-width: 480px)";
+$breakpoint-xs-up: "(min-width: 481px)";
+$breakpoint-xs-only: "(min-width: 481px) and (max-width: 576px)";
+$breakpoint-sm-up: "(min-width: 577px)";
+$breakpoint-sm-only: "(min-width: 577px) and (max-width: 768px)";
 $breakpoint-md-up: "(min-width: 769px)";
 $breakpoint-md-only: "(min-width: 769px) and (max-width: 992px)";
 $breakpoint-lg-up: "(min-width: 993px)";

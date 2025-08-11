@@ -232,30 +232,75 @@
 
 // ! mobile menu
 .site-header {
-	@media (max-width: 992px) {
-		overflow: hidden;
-		height: 104px;
+
+	.header-container #site-navigation .main-navigation {
+		@media (max-width: 992px) {
+			display: none;
+			overflow: hidden;
+			max-height: 0;
+
+			.menu-primary-menu-container {
+				width: 100%;
+			}
+		}
+	}
+
+	&.fade-in .header-container #site-navigation .main-navigation {
+		@media (max-width: 992px) {
+			display: block;
+			max-height: 0;
+			transition: max-height 0.3s ease-out;
+		}
+	}
+
+	&.mobile-menu-open .header-container #site-navigation .main-navigation {
+		@media (max-width: 992px) {
+			display: block;
+			max-height: 1000px;
+			transition: max-height 0.3s ease-out;
+		}
+	}
+
+	&.fade-out .header-container #site-navigation .main-navigation {
+		@media (max-width: 992px) {
+			display: block;
+			max-height: 0;
+			transition: max-height 0.3s ease-out;
+		}
 	}
 
 	.menu-button {
-		color: $black;
+		color: var.$text-color;
+		font-size: 15px;
+		line-height: 1.3;
+		text-align: left;
+		text-transform: uppercase;
 		border-style: none;
 		background-color: transparent;
-		position: absolute;
-		top: 28px;
-		right: 13px;
+		position: relative;
 		z-index: 2;
-		padding: 17px 15px;
-		width: 56px;
+		margin-left: auto;
+		padding: 17px 15px 17px 8px;
+		width: 106px;
 		height: 49px;
 		cursor: pointer;
-		@media #{$breakpoint-lg-up} {
+		@media #{var.$breakpoint-md-up} {
 			display: none;
 		}
 
 		&:focus {
-			outline-color: $black;
-			outline-width: 1px;
+			outline: 2px solid var.$black;
+			outline-offset: -2px;
+		}
+
+		&:focus:not(:focus-visible) {
+			outline: unset;
+		}
+
+		&:focus-visible {
+			outline: 2px solid var.$black;
+			outline-offset: -2px;
+			box-shadow: inset 0 0 0 4px var.$white;
 		}
 	}
 
