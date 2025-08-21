@@ -11,12 +11,11 @@ export default defineConfig({
 	root: '',
 	base: process.env.NODE_ENV === 'development'
 		? '/'
-		: '/dist/',
+		: '/assets/dist/',
 
 	build: {
 		outDir: 'assets',
 		emptyOutDir: false,
-		emptyOutDir: true,
 		manifest: true,
 		sourcemap: true,
 		cssMinify: true,
@@ -24,9 +23,7 @@ export default defineConfig({
 			// overwrite default .html entry
 			input: [
 				// eslint-disable-next-line no-undef
-				path.resolve(__dirname, './src/sass/style.scss'),
-				// eslint-disable-next-line no-undef
-				path.resolve(__dirname, './src/js/script.js'),
+				path.resolve(__dirname, '/src/main.js'),
 			],
 			// Remove the [hash] from file name.
 			output: {

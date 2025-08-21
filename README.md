@@ -52,9 +52,10 @@ Additional files used for building:
 - wp-content/themes/STARTER/.stylelintrc.json
 - wp-content/themes/STARTER/eslint.config.mjs
 - wp-content/themes/STARTER/eslint.config.mjs
-- wp-content/themes/STARTER/inc/inc.vite.php
+- wp-content/themes/STARTER/inc/vite-inc.php
 - wp-content/themes/STARTER/package.json
 - wp-content/themes/STARTER/svgo.config.js
+- wp-content/themes/STARTER/src/main.js
 - wp-content/themes/STARTER/vite.config.mjs
 
 #### Initial Build
