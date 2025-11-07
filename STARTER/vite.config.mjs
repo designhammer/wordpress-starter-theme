@@ -14,7 +14,7 @@ export default defineConfig({
 		: '/assets/dist/',
 
 	build: {
-		outDir: 'assets',
+		outDir: 'assets/dist',
 		emptyOutDir: false,
 		manifest: true,
 		sourcemap: true,
