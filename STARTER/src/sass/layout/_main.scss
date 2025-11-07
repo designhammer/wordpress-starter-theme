@@ -1,4 +1,8 @@
+@use "../utilities/mixins" as mix;
+@use "../utilities/variables" as var;
+
 body {
+	background-color: red;
 	overflow-x: hidden;
 }
 
@@ -12,7 +16,7 @@ figure.wp-block-image {
 
 	&.alignright {
 		margin: 1rem auto;
-		@media #{$breakpoint-lg-up} {
+		@media #{var.$breakpoint-lg-up} {
 			float: right;
 			margin: 0.5rem 0 2rem 2rem;
 		}
@@ -22,11 +26,11 @@ figure.wp-block-image {
 hr,
 .wp-block-separator {
 	border-style: none;
-	border-top: 1px solid $md-gray-300;
+	border-top: 1px solid var.$md-gray-300;
 }
 
 .visually-hidden {
-	@include element-invisible;
+	@include mix.element-invisible;
 }
 
 .site-main {
@@ -42,25 +46,25 @@ hr,
 
 		> article {
 			flex: 0 1 100%;
-			@media #{$breakpoint-md-up} {
+			@media #{var.$breakpoint-md-up} {
 				flex: 0 1 75%;
 				order: 2;
 				padding-left: 1rem;
 			}
-			@media #{$breakpoint-lg-up} {
+			@media #{var.$breakpoint-lg-up} {
 				flex: 0 1 80%;
 			}
 		}
 
 		.submenu-area {
 			display: none;
-			@media #{$breakpoint-md-up} {
+			@media #{var.$breakpoint-md-up} {
 				flex: 0 1 25%;
 				order: 1;
 				display: block;
 				padding-right: 1rem;
 			}
-			@media #{$breakpoint-lg-up} {
+			@media #{var.$breakpoint-lg-up} {
 				flex: 0 1 20%;
 			}
 		}
@@ -75,8 +79,8 @@ hr,
 	}
 
 	.content-wrap {
-		@include row;
-		border-top: 1px solid $md-gray-300;
+		@include mix.row;
+		border-top: 1px solid var.$md-gray-300;
 		margin-top: 3rem;
 		padding-top: 1rem;
 	}
@@ -87,7 +91,7 @@ hr,
 
 	// search form
 	.search-form {
-		border-bottom: 1px solid $md-gray-300;
+		border-bottom: 1px solid var.$md-gray-300;
 		padding-bottom: 1.5rem;
 
 		label {
@@ -97,7 +101,7 @@ hr,
 		}
 
 		.search-field {
-			background-color: $md-gray-100;
+			background-color: var.$md-gray-100;
 			display: block;
 			width: 100%;
 			max-width: 400px;
@@ -112,7 +116,7 @@ hr,
 	.search-results-wrap {
 
 		article {
-			border-top: 1px solid $md-gray-200;
+			border-top: 1px solid var.$md-gray-200;
 			clear: both;
 			padding: 1rem 0;
 
@@ -120,7 +124,7 @@ hr,
 				font-size: 22px;
 
 				a:not(:hover) {
-					color: $black;
+					color: var.$black;
 					text-decoration: none;
 				}
 			}
@@ -132,7 +136,7 @@ hr,
 			&.has-post-thumbnail .wp-post-image {
 				display: block;
 				margin: 1rem auto;
-				@media #{$breakpoint-md-up} {
+				@media #{var.$breakpoint-md-up} {
 					float: right;
 					margin: 1.5rem 0 2rem 2rem;
 					max-width: 260px;
@@ -156,5 +160,5 @@ hr,
 // ! video
 .wp-block-embed__wrapper,
 .embed-container {
-	@include video-iframe-wrapper;
+	@include mix.video-iframe-wrapper;
 }

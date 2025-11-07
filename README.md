@@ -15,7 +15,7 @@ _— [Bill Erickson](https://www.billerickson.net/)._
 
 ## Getting Started
 
-1. Search and replace every instenace of the following three word instances with the new theme name. "STARTER", "Starter", and "starter".
+1. Search and replace every instenace of the following three words with the new theme name. "STARTER", "Starter", and "starter".
 2. Move `.editorconfig` and `composer.json` files to the root of the new websites repo. Composer will install the [PHP CodeSniffer](https://github.com/PHPCSStandards/PHP_CodeSniffer/) tools used for PHP linting. It also installs [deployer](https://deployer.org/), but if you don't need it, remove it from the composer file before running `composer install`.
 
 ### Using the theme task runner
@@ -47,10 +47,9 @@ wp-config.local.php
 define( 'IS_VITE_DEVELOPMENT', true );
 ```
 
-Additional files used for building:
+Additional files used for theme building:
 
 - wp-content/themes/STARTER/.stylelintrc.json
-- wp-content/themes/STARTER/eslint.config.mjs
 - wp-content/themes/STARTER/eslint.config.mjs
 - wp-content/themes/STARTER/inc/vite-inc.php
 - wp-content/themes/STARTER/package.json
@@ -60,7 +59,7 @@ Additional files used for building:
 
 #### Initial Build
 
-Once setup, run `npm run build` to build the dist/manifest.json and asset files. Then open in browser using local URL: e.g. https://local.EXAMPLE.test
+Once setup, run `bun run build` to build the dist/manifest.json and asset files. Then open in browser using local URL: e.g. https://local.EXAMPLE.test
 
 ---
 

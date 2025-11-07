@@ -1,10 +1,11 @@
+@use "variables" as var;
+
 // Text meant only for screen readers.
 .screen-reader-text {
-	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+	overflow-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
 	border: 0;
 	overflow: hidden;
 	position: absolute !important;
-	clip: rect(1px, 1px, 1px, 1px);
 	margin: -1px;
 	padding: 0;
 	width: 1px;
@@ -13,18 +14,17 @@
 	clip-path: inset(50%);
 
 	&:focus {
-		color: $white;
+		color: var.$white;
 		font-size: 14px;
 		line-height: normal;
 		font-weight: 700;
 		text-decoration: none;
 		border-radius: 3px;
-		background-color: $black;
+		background-color: var.$black;
 		display: block;
 		top: 8px;
 		left: 8px;
 		z-index: 100000; /* Above WP toolbar. */
-		clip: auto !important;
 		padding: 15px 23px 14px;
 		width: auto;
 		height: auto;

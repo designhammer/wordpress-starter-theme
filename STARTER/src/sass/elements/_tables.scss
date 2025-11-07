@@ -1,3 +1,5 @@
+@use "../utilities/variables" as var;
+
 table {
 	border-style: none;
 	border-collapse: collapse;
@@ -13,17 +15,17 @@ table {
 	th {
 		font-size: 17px;
 		text-align: left;
-		border-bottom: 2px solid $md-blue-500;
+		border-bottom: 2px solid var.$md-blue-500;
 		vertical-align: bottom;
 	}
 
 	td {
 		font-size: 17px;
-		border-bottom: 1px solid $md-gray-300;
+		border-bottom: 1px solid var.$md-gray-300;
 	}
 
 	tr:last-child td {
-		@media #{$breakpoint-md-up} {
+		@media #{var.$breakpoint-md-up} {
 			border-bottom-style: none;
 		}
 	}
@@ -31,7 +33,7 @@ table {
 	&.bt {
 
 		tr {
-			border-top: 2px solid $md-blue-500;
+			border-top: 2px solid var.$md-blue-500;
 		}
 	}
 }

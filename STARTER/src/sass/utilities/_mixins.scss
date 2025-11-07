@@ -1,3 +1,5 @@
+@use "variables" as var;
+
 // stylelint-disable declaration-block-no-duplicate-properties
 // stylelint-disable value-no-vendor-prefix
 
@@ -21,7 +23,7 @@
 	max-width: unset;
 }
 
-@mixin col($size: $grid-12, $padding: 1rem) {
+@mixin col($size: var.$grid-12, $padding: 1rem) {
 	flex: 0 1 $size;
 	max-width: $size;
 
@@ -74,19 +76,6 @@
 	}
 }
 
-// Word wrap
-@mixin word-wrap {
-	overflow-wrap: break-word;
-	word-wrap: break-word;
-	-ms-word-break: break-all;
-	word-break: break-all;
-	word-break: break-word;
-	-ms-hyphens: auto;
-	-moz-hyphens: auto;
-	-webkit-hyphens: auto;
-	hyphens: auto;
-}
-
 // Ellipsis
 @mixin ellipsis {
 	white-space: nowrap;
@@ -101,7 +90,7 @@
 	@if $orientation == "vertical" {
 		background: -webkit-linear-gradient(top, $start-color, $end-color);
 		background: linear-gradient(to bottom, $start-color, $end-color);
-	} @else if $orientation =="horizontal" {
+	} @else if $orientation == "horizontal" {
 		background: -webkit-linear-gradient(left, $start-color, $end-color);
 		background: linear-gradient(to right, $start-color, $end-color);
 	} @else {

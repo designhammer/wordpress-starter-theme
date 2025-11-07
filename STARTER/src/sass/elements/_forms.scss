@@ -1,12 +1,14 @@
+@use "../utilities/variables" as var;
+
 button,
 input,
 select,
 optgroup,
 textarea {
-	color: $text-color;
+	color: var.$text-color;
 	font-size: 1rem;
 	line-height: 1.2;
-	font-family: $font-main;
+	font-family: var.$font-main;
 }
 
 // MARK: input
@@ -25,11 +27,11 @@ input[type="text"],
 input[type="time"],
 input[type="url"],
 input[type="week"] {
-	color: $md-blue-700;
+	color: var.$md-blue-700;
 	font-size: 1rem;
 	font-weight: 500;
-	border: 2px solid $md-blue-700;
-	background-color: $white;
+	border: 2px solid var.$md-blue-700;
+	background-color: var.$white;
 	display: inline-block;
 	padding: 8px;
 	width: 100%;
@@ -37,7 +39,7 @@ input[type="week"] {
 
 	// &:active,
 	&:focus {
-		outline: 2px solid $black;
+		outline: 2px solid var.$black;
 		outline-offset: 2px;
 	}
 
@@ -46,9 +48,9 @@ input[type="week"] {
 	}
 
 	&:focus-visible {
-		outline: 2px solid $black;
+		outline: 2px solid var.$black;
 		outline-offset: 2px;
-		box-shadow: 0 0 0 2px $white;
+		box-shadow: 0 0 0 2px var.$white;
 	}
 }
 
@@ -57,29 +59,29 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	color: $white;
+	color: var.$white;
 	font-size: 1rem;
 	line-height: normal;
 	font-weight: 700;
 	text-align: center;
 	text-decoration: none;
-	border: 2px solid $md-blue-700;
-	background-color: $md-blue-700;
+	border: 2px solid var.$md-blue-700;
+	background-color: var.$md-blue-700;
 	display: inline-block;
 	padding: 8px 24px;
 	transition: background-color 0.4s ease;
 	cursor: pointer;
 
 	&:hover {
-		color: $white;
-		border-color: $md-blue-900;
-		background-color: $md-blue-900;
+		color: var.$white;
+		border-color: var.$md-blue-900;
+		background-color: var.$md-blue-900;
 		transition: background-color 0.2s ease;
 	}
 
 	// &:active,
 	&:focus {
-		outline: 2px solid $black;
+		outline: 2px solid var.$black;
 		outline-offset: 2px;
 	}
 
@@ -88,16 +90,16 @@ input[type="submit"] {
 	}
 
 	&:focus-visible {
-		outline: 2px solid $black;
+		outline: 2px solid var.$black;
 		outline-offset: 2px;
-		box-shadow: 0 0 0 2px $white;
+		box-shadow: 0 0 0 2px var.$white;
 	}
 }
 
 /* ! textarea */
 textarea {
-	color: $text-color;
-	border: 3px solid $md-gray-400;
+	color: var.$text-color;
+	border: 3px solid var.$md-gray-400;
 	padding: 2%;
 	width: 100%;
 	height: auto !important;
@@ -106,23 +108,23 @@ textarea {
 
 /* ! select */
 select {
-	color: $text-color;
+	color: var.$text-color;
 	font-size: 1rem;
 	line-height: 1.5;
-	border: 2px solid $md-blue-700;
-	background-color: $white;
+	border: 2px solid var.$md-blue-700;
+	background-color: var.$white;
 	padding: 0 2%;
 	width: 100%;
 	height: 50px;
 
 	&:hover {
-		color: $md-blue-700;
+		color: var.$md-blue-700;
 		transition: color 0.2s ease;
 	}
 
 	// &:active,
 	&:focus {
-		outline: 2px solid $black;
+		outline: 2px solid var.$black;
 		outline-offset: 2px;
 	}
 
@@ -131,9 +133,9 @@ select {
 	}
 
 	&:focus-visible {
-		outline: 2px solid $black;
+		outline: 2px solid var.$black;
 		outline-offset: 2px;
-		box-shadow: 0 0 0 2px $white;
+		box-shadow: 0 0 0 2px var.$white;
 	}
 
 	&[disabled="disabled"] {

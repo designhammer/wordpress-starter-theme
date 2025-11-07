@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // ! Grid
 $grid-1: math.div(1, 12) * 100%; // 8.33333333333%
 $grid-2: math.div(2, 12) * 100%; // 16.6666666667%
@@ -40,21 +42,21 @@ $font-pre: "Courier 10 Pitch", courier, monospace;
 // ! Theme colors
 
 // Primary
-$starter-blue: #407ec9;
-$starter-blue-2: #2d5a91;
-$starter-blue-3: #6eaffc;
+$iaconference-blue: #407ec9;
+$iaconference-blue-2: #2d5a91;
+$iaconference-blue-3: #6eaffc;
 
 // Secondary
-$starter-purple: #bb29bb;
-$starter-purple-2: #bf65bf;
-$starter-purple-3: #d392d3;
+$iaconference-purple: #bb29bb;
+$iaconference-purple-2: #bf65bf;
+$iaconference-purple-3: #d392d3;
 
 // Gray
 $white: #ffffff;
 $black: #222222;
-$starter-gray: #5b6770;
-$starter-gray-2: #788690;
-$starter-gray-3: #9ca6ae;
+$iaconference-gray: #5b6770;
+$iaconference-gray-2: #788690;
+$iaconference-gray-3: #9ca6ae;
 $text-color: $black;
 
 // ! box shadows (for consistency)
